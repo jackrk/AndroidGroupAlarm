@@ -1,0 +1,53 @@
+<html>
+<head>
+<script type="text/javascript" src="js/jquery-2.1.0.min.js"></script>
+</head>
+<style>
+
+</style>
+<script type="text/javascript">
+$(document).ready(function() {
+
+	$("#setbutton").click(function() {
+		setAlarm($(this));
+	});
+
+});
+  function setAlarm(e) {
+		var $time = e.prev().prev().prev().val();
+		var $offset = e.prev().prev().val();
+		var $day = e.prev().val();
+        Alarm.set($time, $day, $offset);
+    }  
+</script>
+<body>
+<div id="alarm_cont"> 
+<!-- <span class="root_time" id="root_time">8:00 am</span> -->
+<input type="text" class="root_time" id="root_time" />
+<select class="offset" id="offset">
+	<option>10</option>
+	<option>15</option>
+	<option>20</option>
+	<option>30</option>
+	<option>40</option>
+	<option>45</option>
+	<option>50</option>
+	<option>55</option>
+	<option>60</option>
+</select>
+<select class="day" id="day_picker">
+	<option>Mondays</option>
+	<option>Tuesdays</option>
+	<option>Wednesdays</option>
+	<option>Thursdays</option>
+	<option>Fridays</option>
+	<option>Saturday</option>
+	<option>Sunday</option>
+	<option>Weekdays</option>
+</select>
+<input type="button" id="setbutton" value="Set" />
+</div>
+
+
+</body>
+</html>
